@@ -9,7 +9,11 @@
 
 ![image](https://github.com/user-attachments/assets/4ac8dfb6-c090-42f0-bb17-5302b40872ca)
 
-
+##Стек
+* ASP. Net
+* EF
+* RabbitMQ
+* Ocelot
 
 ## База данных
 В качестве базы данных выступает СУБД postgres
