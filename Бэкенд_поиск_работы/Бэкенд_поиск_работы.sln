@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobSeekerService", "JobSeekerService\JobSeekerService.csproj", "{1238DFC0-7635-456D-8CBD-93823F85F197}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatisticService", "StatisticService\StatisticService.csproj", "{C815AA6E-34E5-4F45-9355-0D10117BDA23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{3EC0A940-3014-4CF6-82A1-19CBA860D94A}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthService", "AuthService\AuthService.csproj", "{5A9B8962-AC11-4A51-BD8B-FAE082A79074}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployerService", "EmployerService\EmployerService.csproj", "{93145B53-1079-4B9A-A01F-29858A29C329}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "APIGateway\APIGateway.csproj", "{E9421037-0B2C-4A81-AE1C-1F46B3E169F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1238DFC0-7635-456D-8CBD-93823F85F197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1238DFC0-7635-456D-8CBD-93823F85F197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1238DFC0-7635-456D-8CBD-93823F85F197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1238DFC0-7635-456D-8CBD-93823F85F197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C815AA6E-34E5-4F45-9355-0D10117BDA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C815AA6E-34E5-4F45-9355-0D10117BDA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C815AA6E-34E5-4F45-9355-0D10117BDA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C815AA6E-34E5-4F45-9355-0D10117BDA23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A9B8962-AC11-4A51-BD8B-FAE082A79074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A9B8962-AC11-4A51-BD8B-FAE082A79074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A9B8962-AC11-4A51-BD8B-FAE082A79074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A9B8962-AC11-4A51-BD8B-FAE082A79074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93145B53-1079-4B9A-A01F-29858A29C329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93145B53-1079-4B9A-A01F-29858A29C329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93145B53-1079-4B9A-A01F-29858A29C329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93145B53-1079-4B9A-A01F-29858A29C329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9421037-0B2C-4A81-AE1C-1F46B3E169F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9421037-0B2C-4A81-AE1C-1F46B3E169F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9421037-0B2C-4A81-AE1C-1F46B3E169F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9421037-0B2C-4A81-AE1C-1F46B3E169F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2C89373-DF39-4E9B-BBF4-BA3BD7DE3FB3}
+	EndGlobalSection
+EndGlobal

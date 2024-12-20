@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Детали вакансии";
+    var userInfo = ViewData["UserInfo"] as MVCFrontForJobSeek.Controllers.VacancyController.UserInfo;
+    var resumes = ViewData["Resumes"] as List<MVCFrontForJobSeek.Controllers.VacancyController.Resume>;
+    var vacancyId = ViewData["VacancyId"] as int?;  // VacancyId передается из контроллера
+}
+
+<h1>Детали вакансии</h1>
+
+<div id="error-message" class="alert alert-danger d-none"></div>
+
+<div id="vacancy-details" class="card" style="display: none; padding: 20px;">
+    <h3 class="card-title" id="job-name"></h3>
+    <div class="card-body">
+        <p><strong>ID:</strong> <span id="vacancy-id"></span></p>
+        <p><strong>Город:</strong> <span id="city">Не указан</span></p>
+        <p><strong>Опыт:</strong> <span id="experience-desc">Не указано</span></p>
+        <p><strong>Описание:</strong> <span id="description">Не указано</span></p>
+        <p><strong>Статус:</strong> <span id="status-desc">Не указано</span></p>
+
+        @if (userInfo != null && userInfo.Role == "User")
+        {
+            <button id="apply-vacancy" class="btn btn-success">Откликнуться</button>
+
+            <div id="resume-selection" style="display: none;">
+                <label for="resumeSelect">Выберите резюме:</label>
+                <select id="resumeSelect" class="form-control">
+                    @foreach (var resume in resumes)
+                    {
+                        <option value="@resume.Id">
+                            Город: @resume.City, Опыт: @resume.Experience, Зарплата: @resume.Salary ₽, Работа: @resume.JobName
+                        </option>
+                    }
+                </select>
+                <button id="submit-apply" class="btn btn-primary">Подтвердить отклик</button>
+            </div>
+        }
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var vacancyId = window.location.pathname.split("/").pop();
+
+        if (!vacancyId) {
+            $('#error-message').text('ID вакансии не указан.').removeClass('d-none');
+            return;
+        }
+
+        // Запрос на получение данных вакансии
+        $.ajax({
+            url: `http://localhost:8080/gateway/Employer/Vacancy/GetVacancyById`,
+            type: 'GET',
+            data: { id: vacancyId },
+            success: function (data) {
+                if (data) {
+                    $('#vacancy-id').text(data.id || 'Не указан');
+                    $('#job-name').text(data.job_name || 'Название не указано');
+                    $('#city').text(data.city || 'Не указан');
+                    $('#experience-desc').text(data.experience_desc || 'Не указано');
+                    $('#description').text(data.description || 'Не указано');
+                    $('#status-desc').text(data.status_description || 'Не указано');
+
+                    // Отображаем блок с деталями
+                    $('#vacancy-details').show();
+                } else {
+                    $('#error-message').text('Вакансия не найдена.').removeClass('d-none');
+                }
+            },
+            error: function (xhr, status, error) {
+                $('#error-message').text('Ошибка загрузки данных вакансии.').removeClass('d-none');
+            }
+        });
+
+        // Откликнуться на вакансию
+        $('#apply-vacancy').click(function () {
+            $('#resume-selection').show();
+        });
+
+        // Подтвердить отклик
+        $('#submit-apply').click(function () {
+            var resumeId = $('#resumeSelect').val();
+
+            if (resumeId && vacancyId) {
+                var responseModel = {
+                    Resume_id: resumeId,
+                    Vacancy_id: vacancyId
+                };
+
+                // Отправляем отклик
+                $.ajax({
+                    url: '/Vacancy/ApplyForVacancy',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(responseModel),
+                    success: function (data) {
+                        if (data.success) {
+                            alert(data.message);
+                        } else {
+                            alert(data.message);
+                        }
+                    },
+                    error: function () {
+                        alert('Ошибка при отправке отклика.');
+                    }
+                });
+            } else {
+                alert('Выберите резюме для отклика.');
+            }
+        });
+    });
+</script>

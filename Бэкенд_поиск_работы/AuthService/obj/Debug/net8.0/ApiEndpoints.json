@@ -1,0 +1,76 @@
+[
+  {
+    "ContainingType": "JobSeekerService.Controllers.AuthController",
+    "Method": "GetUserInfoById",
+    "RelativePath": "Auth/Auth/GetUserInfoById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "Auth/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "JobSeekerService.JSON.RequestJSON.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "Auth/Auth/RefreshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.AuthController",
+    "Method": "RegisterEmployer",
+    "RelativePath": "Auth/Auth/RegisterEmployer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "JobSeekerService.JSON.RequestJSON.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.AuthController",
+    "Method": "RegisterJobSeeker",
+    "RelativePath": "Auth/Auth/RegisterJobSeeker",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "JobSeekerService.JSON.RequestJSON.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

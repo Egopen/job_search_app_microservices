@@ -1,0 +1,208 @@
+[
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResponseController",
+    "Method": "AddResponse",
+    "RelativePath": "JobSeeker/Response/AddResponse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addResponseJSON",
+        "Type": "JobSeekerService.JSON.RequestJSON.AddResponseToVacancyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResponseController",
+    "Method": "DeleteResponseById",
+    "RelativePath": "JobSeeker/Response/DeleteResponseById",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResponseController",
+    "Method": "GetAllResponsesByResumeId",
+    "RelativePath": "JobSeeker/Response/GetAllResponsesByResumeId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "AddExperience",
+    "RelativePath": "JobSeeker/Resume/AddExperience",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "JobSeekerService.JSON.RequestJSON.ExperienceRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "CreateResume",
+    "RelativePath": "JobSeeker/Resume/CreateResume",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "JobSeekerService.JSON.RequestJSON.ResumeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "DeleteExperienceById",
+    "RelativePath": "JobSeeker/Resume/DeleteExperienceById",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "exp_id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "DeleteResume",
+    "RelativePath": "JobSeeker/Resume/DeleteResume",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resumeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "GetAllBriefResume",
+    "RelativePath": "JobSeeker/Resume/GetAllBriefResume",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "GetAllExperienceByResumeId",
+    "RelativePath": "JobSeeker/Resume/GetAllExperienceByResumeId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resume_id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "GetAllUserBriefResume",
+    "RelativePath": "JobSeeker/Resume/GetAllUserBriefResume",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "GetResumeById",
+    "RelativePath": "JobSeeker/Resume/GetResumeById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "UpdateExperience",
+    "RelativePath": "JobSeeker/Resume/UpdateExperience",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "JobSeekerService.JSON.RequestJSON.ExperienceUpdateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.ResumeController",
+    "Method": "UpdateResume",
+    "RelativePath": "JobSeeker/Resume/UpdateResume",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "JobSeekerService.JSON.RequestJSON.UpdateResumeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JobSeekerService.Controllers.StatusController",
+    "Method": "GetAllStatuses",
+    "RelativePath": "JobSeeker/Status/GetAllStatuses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

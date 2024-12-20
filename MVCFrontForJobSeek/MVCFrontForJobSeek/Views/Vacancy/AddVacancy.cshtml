@@ -1,0 +1,143 @@
+﻿@model MVCFrontForJobSeek.Models.VacancyModel
+
+@{
+    ViewData["Title"] = "Добавить вакансию";
+}
+
+<h2>Добавить вакансию</h2>
+
+<form id="addVacancyForm">
+    <div class="form-group">
+        <label for="job_name">Название специальности</label>
+        <input type="text" id="job_name" name="Job_name" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="description">Описание</label>
+        <textarea id="description" name="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="city">Город</label>
+        <input type="text" id="city" name="City" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="status_id">Статус</label>
+        <select id="status_id" name="Status_id" class="form-control" required>
+            <option value="">Выберите статус</option>
+            <!-- Статусы будут загружаться сюда через AJAX -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="experience_id">Опыт (лет)</label>
+        <select id="experience_id" name="Experience_id" class="form-control" required>
+            <option value="">Выберите опыт</option>
+            <!-- Опыт будет загружаться сюда через AJAX -->
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Добавить вакансию</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Загружаем список статусов через AJAX
+        $.ajax({
+            url: 'http://localhost:8080/gateway/Employer/Satus/GetAllStatuses',  // Убедитесь, что URL правильный
+            type: 'GET',
+            success: function (data) {
+                // Выводим полученные данные в консоль для отладки
+                console.log('Полученные данные с сервера для статусов:', data);
+
+                // Очистим текущий список статусов
+                $('#status_id').empty();
+
+                // Добавим пустой вариант "Выберите статус"
+                $('#status_id').append('<option value="">Выберите статус</option>');
+
+                // Проверим, что данные действительно пришли в нужном формате
+                if (data && Array.isArray(data)) {
+                    data.forEach(function (status) {
+                        console.log('Статус:', status);  // Для отладки вывожу каждый статус
+
+                        // Добавляем активные статусы в выпадающий список
+                        $('#status_id').append(`<option value="${status.id}">${status.desc}</option>`);
+                    });
+                } else {
+                    console.warn('Получены некорректные данные для статусов:', data);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Ошибка при загрузке статусов:', error);
+                alert('Ошибка при загрузке статусов. Попробуйте позже.');
+            }
+        });
+
+        // Загружаем список опыта через AJAX
+        $.ajax({
+            url: 'http://localhost:8080/gateway/Employer/Experience/GetAllExperience',  // Убедитесь, что URL правильный
+            type: 'GET',
+            success: function (data) {
+                // Выводим полученные данные в консоль для отладки
+                console.log('Полученные данные с сервера для опыта:', data);
+
+                // Очистим текущий список опыта
+                $('#experience_id').empty();
+
+                // Добавим пустой вариант "Выберите опыт"
+                $('#experience_id').append('<option value="">Выберите опыт</option>');
+
+                // Проверим, что данные действительно пришли в нужном формате
+                if (data && Array.isArray(data)) {
+                    data.forEach(function (experience) {
+                        console.log('Опыт:', experience);  // Для отладки вывожу каждый опыт
+
+                        // Добавляем опыт в выпадающий список
+                        $('#experience_id').append(`<option value="${experience.id}">${experience.desc}</option>`);
+                    });
+                } else {
+                    console.warn('Получены некорректные данные для опыта:', data);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Ошибка при загрузке опыта:', error);
+                alert('Ошибка при загрузке опыта. Попробуйте позже.');
+            }
+        });
+
+        // Обработка отправки формы
+        $('#addVacancyForm').submit(function (event) {
+            event.preventDefault();
+
+            // Собираем данные из формы
+            var vacancyData = {
+                Job_name: $('#job_name').val(),
+                Description: $('#description').val(),
+                City: $('#city').val(),
+                Status_id: $('#status_id').val(),
+                Experience_id: $('#experience_id').val()
+            };
+
+            // Получаем access token для авторизации
+            var accessToken = '@ViewData["AccessToken"]';
+
+            // Отправляем данные на сервер
+            $.ajax({
+                url: 'http://localhost:8080/gateway/Employer/Vacancy/AddVacancy',  // URL для добавления вакансии
+                type: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify(vacancyData),  // Данные в формате JSON
+                success: function (response) {
+                    alert('Вакансия успешно добавлена!');
+                    window.location.href = '/Profile';  // Перенаправление на профиль
+                },
+                error: function (xhr, status, error) {
+                    console.error('Ошибка при добавлении вакансии:', xhr.responseText);
+                    alert('Ошибка при добавлении вакансии: ' + (xhr.responseJSON?.message || error));
+                }
+            });
+        });
+    });
+</script>

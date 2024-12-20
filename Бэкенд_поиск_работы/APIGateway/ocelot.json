@@ -1,0 +1,371 @@
+﻿{
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:8080"
+  },
+  //AuthService
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/Auth/Auth/RegisterJobSeeker",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/Auth/Auth/RegisterJobSeeker",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8084
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Auth/Auth/RegisterEmployer",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/Auth/Auth/RegisterEmployer",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8084
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Auth/Auth/Login",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/Auth/Auth/Login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8084
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Auth/Auth/RefreshToken",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/Auth/Auth/RefreshToken",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8084
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Auth/Auth/GetUserInfoFromToken",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Auth/Auth/GetUserInfoFromToken",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8084
+        }
+      ]
+    },
+    //EmployerService
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Vacancy/GetAllBriefVacancy",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Employer/Vacancy/GetAllBriefVacancy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Vacancy/GetVacancyById",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Employer/Vacancy/GetVacancyById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Vacancy/GetAllEmployerBriefVacancy",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Employer/Vacancy/GetAllEmployerBriefVacancy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Vacancy/GetAllOwnBriefVacancy",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Employer/Vacancy/GetAllOwnBriefVacancy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Vacancy/AddVacancy",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/Employer/Vacancy/AddVacancy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Vacancy/DeleteVacancy",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/Employer/Vacancy/DeleteVacancy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Vacancy/UpdateVacancy",
+      "UpstreamHttpMethod": [ "PATCH" ],
+      "DownstreamPathTemplate": "/Employer/Vacancy/UpdateVacancy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Response/DeleteResponseById",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/Employer/Response/DeleteResponseById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Response/GetAllResponsesByVacancyId",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Employer/Response/GetAllResponsesByVacancyId",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Satus/GetAllStatuses",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Employer/Satus/GetAllStatuses",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Employer/Experience/GetAllExperience",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/Employer/Experience/GetAllExperience",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8082
+        }
+      ]
+    },
+    //JobSeekerService
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/CreateResume",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/CreateResume",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/GetAllUserBriefResume",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/GetAllUserBriefResume",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/GetResumeById",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/GetResumeById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/GetAllBriefResume",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/GetAllBriefResume",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/UpdateResume",
+      "UpstreamHttpMethod": [ "PATCH" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/UpdateResume",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/DeleteResume",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/DeleteResume",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/AddExperience",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/AddExperience",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/GetAllExperienceByResumeId",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/GetAllExperienceByResumeId",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/DeleteExperienceById",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/DeleteExperienceById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Resume/UpdateExperience",
+      "UpstreamHttpMethod": [ "PATCH" ],
+      "DownstreamPathTemplate": "/JobSeeker/Resume/UpdateExperience",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Response/AddResponse",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/JobSeeker/Response/AddResponse",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Response/DeleteResponseById",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/JobSeeker/Response/DeleteResponseById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Response/GetAllResponsesByResumeId",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/JobSeeker/Response/GetAllResponsesByResumeId",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/JobSeeker/Status/GetAllStatuses",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/JobSeeker/Status/GetAllStatuses",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 8083
+        }
+      ]
+    }
+
+  ]
+}

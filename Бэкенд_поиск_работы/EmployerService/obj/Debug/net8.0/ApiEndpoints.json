@@ -1,0 +1,154 @@
+[
+  {
+    "ContainingType": "EmployerService.Controllers.ExperienceController",
+    "Method": "GetAllExperience",
+    "RelativePath": "Employer/Experience/GetAllExperience",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.ResponseController",
+    "Method": "DeleteResponseById",
+    "RelativePath": "Employer/Response/DeleteResponseById",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.ResponseController",
+    "Method": "GetAllResponsesByVacancyId",
+    "RelativePath": "Employer/Response/GetAllResponsesByVacancyId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.SatusController",
+    "Method": "GetAllStatuses",
+    "RelativePath": "Employer/Satus/GetAllStatuses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.VacancyController",
+    "Method": "AddVacancy",
+    "RelativePath": "Employer/Vacancy/AddVacancy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EmployerService.JSON.RequestJSON.AddVacancyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.VacancyController",
+    "Method": "DeleteVacancy",
+    "RelativePath": "Employer/Vacancy/DeleteVacancy",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vacancy_id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.VacancyController",
+    "Method": "GetAllBriefVacancy",
+    "RelativePath": "Employer/Vacancy/GetAllBriefVacancy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.VacancyController",
+    "Method": "GetAllEmployerBriefVacancy",
+    "RelativePath": "Employer/Vacancy/GetAllEmployerBriefVacancy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employer_id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.VacancyController",
+    "Method": "GetAllOwnBriefVacancy",
+    "RelativePath": "Employer/Vacancy/GetAllOwnBriefVacancy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.VacancyController",
+    "Method": "GetVacancyById",
+    "RelativePath": "Employer/Vacancy/GetVacancyById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployerService.Controllers.VacancyController",
+    "Method": "UpdateVacancy",
+    "RelativePath": "Employer/Vacancy/UpdateVacancy",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EmployerService.JSON.RequestJSON.UpdateVacancyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

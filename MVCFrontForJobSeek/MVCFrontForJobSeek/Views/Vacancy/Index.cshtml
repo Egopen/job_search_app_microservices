@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Список вакансий";
+}
+
+<h1>Список вакансий</h1>
+
+<div id="vacancy-list">
+    <!-- Здесь будут отображаться вакансии -->
+</div>
+
+<!-- Подключаем jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Добавляем CSS-стили для рамочек -->
+<style>
+    .vacancy-item {
+        border: 1px solid #ccc; /* Рамка */
+        padding: 15px; /* Отступы внутри карточки */
+        margin-bottom: 20px; /* Отступ между вакансиями */
+        border-radius: 8px; /* Скругленные углы */
+        background-color: #f9f9f9; /* Светлый фон */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для лучшего отделения */
+    }
+
+        .vacancy-item h3 {
+            margin-top: 0; /* Убираем отступ сверху */
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .vacancy-item p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .vacancy-item .btn {
+            margin-top: 10px;
+        }
+</style>
+
+<script>
+    $(document).ready(function () {
+        // Делаем запрос к бэкенду для получения кратких вакансий
+        $.ajax({
+            url: 'http://localhost:8080/gateway/Employer/Vacancy/GetAllBriefVacancy',  // Убедитесь, что это правильный URL для вашего API
+            type: 'GET',
+            success: function (data) {
+                console.log(data);  // Логируем данные, чтобы увидеть их структуру
+
+                // Проверяем, есть ли вакансии
+                if (data && data.length > 0) {
+                    var vacancyList = $('#vacancy-list');
+                    vacancyList.empty(); // Очистим список перед добавлением новых данных
+
+                    // Проходим по всем вакансиям
+                    data.forEach(function (vacancy) {
+                        console.log(vacancy);  // Логируем каждую вакансию
+
+                        // Формируем HTML-контент для каждой вакансии
+                        var vacancyItem = `
+                                <div class="vacancy-item">
+                                    <h3>${vacancy.job_name}</h3> <!-- Название вакансии -->
+                                    <p><strong>Город:</strong> ${vacancy.city || 'Не указан'}</p> <!-- Город -->
+                                    <p><strong>Опыт:</strong> ${vacancy.experience_desc || 'Не указан'}</p> <!-- Опыт -->
+                                    <a href="/Vacancy/Details/${vacancy.id}" class="btn btn-primary">Подробнее</a> <!-- Кнопка "Подробнее" -->
+                                </div>
+                            `;
+                        // Добавляем вакансию в список
+                        vacancyList.append(vacancyItem);
+                    });
+                } else {
+                    // Если вакансий нет
+                    $('#vacancy-list').html('<p>Нет доступных вакансий.</p>');
+                }
+            },
+            error: function () {
+                // Если ошибка при запросе
+                $('#vacancy-list').html('<p>Ошибка загрузки данных о вакансиях.</p>');
+            }
+        });
+    });
+</script>

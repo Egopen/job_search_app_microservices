@@ -1,0 +1,155 @@
+﻿@model MVCFrontForJobSeek.Controllers.UserData
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h2 class="text-center">Профиль</h2>
+
+<div class="profile-container">
+    <div class="profile-item">
+        <p><strong>ID:</strong> <span>@Model.Id</span></p>
+    </div>
+    <div class="profile-item">
+        <p><strong>Email:</strong> <span>@Model.Email</span></p>
+    </div>
+    <div class="profile-item">
+        <p><strong>Role:</strong> <span>@Model.Role</span></p> <!-- Отображаем роль -->
+    </div>
+</div>
+
+@if (Model.Role == "User")
+{
+    <h3>Ваши резюме</h3>
+    <button class="btn btn-primary mb-3" onclick="location.href='/Resume/Create'">Добавить резюме</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название специальности</th>
+                <th>Город</th>
+                <th>Зарплата</th>
+                <th>Опыт (лет)</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var resume in Model.Resumes)
+            {
+                <tr>
+                    <td>@resume.JobName</td>
+                    <td>@resume.City</td>
+                    <td>@resume.Salary</td>
+                    <td>@resume.Experience</td>
+                    <td>
+                        <button class="btn btn-info" onclick="location.href='/Resume/SelfDetailsResume/@resume.Id'">Подробнее</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@if (Model.Role == "Employer")
+{
+    <h3>Ваши вакансии</h3>
+    <button class="btn btn-primary mb-3" onclick="location.href='/Vacancy/AddVacancy'">Добавить вакансию</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название специальности</th>
+                <th>Город</th>
+                <th>Требуемый опыт (лет)</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vacancy in Model.Vacancies)
+            {
+                <tr>
+                    <td>@vacancy.Job_name</td>
+                    <td>@vacancy.City</td>
+                    <td>@vacancy.Experience_desc</td>
+                    <td>
+                        <button class="btn btn-info" onclick="location.href='/Vacancy/SelfVacancyDetails/@vacancy.Id'">Подробнее</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+<style>
+    .profile-container {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-item {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .profile-item strong {
+        font-size: 20px;
+        color: #333;
+    }
+
+    .profile-item span {
+        font-size: 18px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    h2 {
+        font-size: 30px;
+        color: #2980b9;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        color: white;
+        border: none;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+    .mb-3 {
+        margin-bottom: 20px;
+    }
+</style>

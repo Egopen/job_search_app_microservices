@@ -1,0 +1,55 @@
+﻿@model MVCFrontForJobSeek.Controllers.ResumeController.ExperienceRequest
+
+@{
+    ViewBag.Title = "Добавить опыт";
+}
+
+<h2>Добавить опыт</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<form asp-action="AddExperience" method="post">
+    <!-- Скрытое поле для передачи ResumeId -->
+    @Html.HiddenFor(model => model.ResumeId)
+
+    <div class="form-group">
+        <label for="Company_name">Компания</label>
+        <input type="text" class="form-control" id="Company_name" name="Company_name" value="@Model.Company_name" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Job_name">Должность</label>
+        <input type="text" class="form-control" id="Job_name" name="Job_name" value="@Model.Job_name" required />
+    </div>
+
+    <div class="form-group">
+        <label for="City">Город</label>
+        <input type="text" class="form-control" id="City" name="City" value="@Model.City" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Start_d">Дата начала</label>
+        <input type="date" class="form-control" id="Start_d" name="Start_d" value="@Model.Start_d.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Finish_d">Дата окончания</label>
+        <input type="date" class="form-control" id="Finish_d" name="Finish_d" value="@Model.Finish_d.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Desc">Описание</label>
+        <textarea class="form-control" id="Desc" name="Desc">@Model.Desc</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Добавить опыт</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Отмена</a>
+</form>

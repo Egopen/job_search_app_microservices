@@ -1,0 +1,97 @@
+﻿
+services:
+    
+  postgres:
+    image: "postgres:14"
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password #если меняете пороль, порт или пользователя, обязательно измените .env во всех микросервисах
+    ports:
+      - "5400:5432"  
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    container_name: rabbitmq
+    ports:
+      - "7000:7000"  
+    networks:
+      - app_network
+  
+  gateway:
+    build:
+      context: ./APIGateway
+    ports:
+      - "8080:8080"   
+    depends_on:
+      - auth
+      - statistic
+      - employer
+      - seeker 
+    networks:
+      - app_network
+   
+  statistic:
+    build:
+      context: ./StatisticService
+    ports:
+      - "8081:8081"   
+    env_file:
+      - ./StatisticService/.env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+
+  
+  employer:
+    build:
+      context: ./EmployerService
+    ports:
+      - "8082:8082"  
+    env_file:
+      - ./EmployerService/.env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+
+  
+  seeker:
+    build:
+      context: ./JobSeekerService
+    ports:
+      - "8083:8083"   
+    env_file:
+      - ./JobSeekerService/.env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+
+  
+  auth:
+    build:
+      context: ./AuthService
+    ports:
+      - "8084:8084"   
+    env_file:
+      - ./AuthService/.env
+    depends_on:
+      - rabbitmq
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+volumes:
+  postgres_data:
+    driver: local
