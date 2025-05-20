@@ -1,14 +1,17 @@
 
 using EmployerService.DB.DBContext;
+using EmployerService.Domain.Services.ExperienceService;
+using EmployerService.Domain.Services.RabbitMQ;
+using EmployerService.Domain.Services.ResponseService;
+using EmployerService.Domain.Services.StatusService;
+using EmployerService.Domain.Services.VacancyService;
 using EmployerService.Features;
 using EmployerService.Features.Logger;
 using EmployerService.Options;
-using EmployerService.RabbitMQ;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using RabbitMQInitializer;
 
 namespace EmployerService
 {
@@ -25,10 +28,14 @@ namespace EmployerService
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<Context>(db => db.UseNpgsql(Environment.GetEnvironmentVariable("CONNECTION_STRING")));
-            builder.Services.AddSingleton<LoggerService>();
+            builder.Services.AddScoped<ILoggerService,LoggerService>();
             builder.Services.AddSingleton<RabbitMQService>();
             builder.Services.AddHostedService<RabbitMQAddResponseBackgroundService>();
             builder.Services.AddHostedService<RabbitMQSendStatisticService>();
+            builder.Services.AddScoped<IExperienceService,ExperienceService>();
+            builder.Services.AddScoped<IResponseService, ResponseService>();
+            builder.Services.AddScoped<IStatusService, StatusService>();
+            builder.Services.AddScoped<IVacancyService,VacancyService>();
             ///
             /// Authorization
             ///

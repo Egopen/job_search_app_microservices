@@ -2,21 +2,20 @@
 using EmployerService.Features.Logger;
 using EmployerService.JSON.RabbitMQClasses;
 using Microsoft.EntityFrameworkCore;
-using RabbitMQInitializer;
 using System.Text.Json;
 
-namespace EmployerService.RabbitMQ
+namespace EmployerService.Domain.Services.RabbitMQ
 {
     public class RabbitMQSendStatisticService : BackgroundService
     {
-        private readonly IServiceProvider _serviceProvider; 
+        private readonly IServiceProvider _serviceProvider;
         private readonly RabbitMQService _rabbitMQService;
         private readonly ILoggerService _logger;
 
         public RabbitMQSendStatisticService(RabbitMQService rabbitMQService, IServiceProvider serviceProvider, LoggerService logger)
         {
             _rabbitMQService = rabbitMQService;
-            _serviceProvider = serviceProvider; 
+            _serviceProvider = serviceProvider;
             _logger = logger;
         }
 
@@ -54,14 +53,9 @@ namespace EmployerService.RabbitMQ
         // Метод для получения статистики из базы данных
         private async Task<VacancyStatisticJSON> GetStatisticsAsync(Context dbContext)
         {
-            // Подсчитываем общее количество вакансий
             int total = await dbContext.Vacancies.CountAsync();
-
-            // Подсчитываем количество активных вакансий
             int active = await dbContext.Vacancies
                 .CountAsync(v => v.Status.IsActive);
-
-            // Подсчитываем количество неактивных вакансий
             int inactive = await dbContext.Vacancies
                 .CountAsync(v => !v.Status.IsActive);
 

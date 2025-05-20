@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using EmployerService.Domain.Services.VacancyService;
 
 namespace EmployerService.Controllers
 {
@@ -14,13 +15,13 @@ namespace EmployerService.Controllers
     [ApiController]
     public class VacancyController : ControllerBase
     {
-        private readonly Context DB;
-        private readonly LoggerService logger;
+        private readonly ILoggerService logger;
+        private readonly IVacancyService vacancyService;
 
-        public VacancyController(Context context, LoggerService logger)
+        public VacancyController( ILoggerService logger,IVacancyService vacancyService)
         {
-            DB = context;
             this.logger = logger;
+            this.vacancyService = vacancyService;
         }
 
         [HttpGet]
@@ -29,21 +30,8 @@ namespace EmployerService.Controllers
             logger.LogInformation("Fetching all brief vacancies.");
             try
             {
-                var vac = await (from vc in DB.Vacancies
-                                 join exp in DB.Experiences on vc.ExperienceId equals exp.Id
-                                 join status in DB.Statuses on vc.StatusId equals status.Id
-                                 where status.IsActive == true
-                                 select new BriefVacancyResponse
-                                 {
-                                     Id = vc.Id,
-                                     Job_name = vc.Job_name,
-                                     Experience_desc = exp.Desc,
-                                     Experience_id = exp.Id,
-                                     Status_id = vc.StatusId,
-                                     Employer_id = vc.EmployerId,
-                                     City = vc.City
-                                 }).ToListAsync();
-                logger.LogInformation($"Fetched {vac.Count} brief vacancies successfully.");
+                var vac = await vacancyService.GetAllBriefVacancy();
+                logger.LogInformation($"Fetched {vac.Count()} brief vacancies successfully.");
                 return Ok(vac);
             }
             catch (Exception ex)
@@ -59,28 +47,7 @@ namespace EmployerService.Controllers
             logger.LogInformation($"Fetching vacancy details for ID: {id}.");
             try
             {
-                var vacancy = await (from vc in DB.Vacancies
-                                     join exp in DB.Experiences on vc.ExperienceId equals exp.Id
-                                     join status in DB.Statuses on vc.StatusId equals status.Id
-                                     where status.IsActive == true && vc.Id == id
-                                     select new VacancyResponse
-                                     {
-                                         Id = vc.Id,
-                                         Job_name = vc.Job_name,
-                                         Experience_desc = exp.Desc,
-                                         Description = vc.Description,
-                                         Status_description = status.Desc,
-                                         Experience_id = exp.Id,
-                                         Status_id = vc.StatusId,
-                                         Employer_id = vc.EmployerId,
-                                         City = vc.City
-                                     }).FirstOrDefaultAsync();
-
-                if (vacancy == null)
-                {
-                    logger.LogWarning($"Vacancy with ID {id} not found.");
-                    return NotFound(new { error = "Vacancy not found" });
-                }
+                var vacancy = await vacancyService.GetVacancyById(id);
 
                 logger.LogInformation($"Fetched vacancy details for ID {id} successfully.");
                 return Ok(vacancy);
@@ -98,21 +65,7 @@ namespace EmployerService.Controllers
             logger.LogInformation($"Fetching all brief vacancies for employer ID: {employer_id}.");
             try
             {
-                var vac = await (from vc in DB.Vacancies
-                                 join exp in DB.Experiences on vc.ExperienceId equals exp.Id
-                                 join status in DB.Statuses on vc.StatusId equals status.Id
-                                 where status.IsActive == true && vc.EmployerId == employer_id
-                                 select new BriefVacancyResponse
-                                 {
-                                     Id = vc.Id,
-                                     Job_name = vc.Job_name,
-                                     Experience_desc = exp.Desc,
-                                     Experience_id = exp.Id,
-                                     Status_id = vc.StatusId,
-                                     Employer_id = vc.EmployerId,
-                                     City = vc.City
-                                 }).ToListAsync();
-                logger.LogInformation($"Fetched {vac.Count} brief vacancies for employer ID {employer_id} successfully.");
+                var vac = await vacancyService.GetAllEmployerBriefVacancy(employer_id);
                 return Ok(vac);
             }
             catch (Exception ex)
@@ -135,21 +88,7 @@ namespace EmployerService.Controllers
                     logger.LogWarning("User ID not found in token.");
                     return BadRequest(new { error = "Something went wrong" });
                 }
-                var vac = await (from vc in DB.Vacancies
-                                 join exp in DB.Experiences on vc.ExperienceId equals exp.Id
-                                 join status in DB.Statuses on vc.StatusId equals status.Id
-                                 where status.IsActive == true && vc.EmployerId == int.Parse(userId)
-                                 select new BriefVacancyResponse
-                                 {
-                                     Id = vc.Id,
-                                     Job_name = vc.Job_name,
-                                     Experience_desc = exp.Desc,
-                                     Experience_id = exp.Id,
-                                     Status_id = vc.StatusId,
-                                     Employer_id = vc.EmployerId,
-                                     City = vc.City
-                                 }).ToListAsync();
-                logger.LogInformation($"Fetched {vac.Count} brief vacancies for authenticated employer successfully.");
+                var vac = await vacancyService.GetAllOwnBriefVacancy(int.Parse(userId));
                 return Ok(vac);
             }
             catch (Exception ex)
@@ -172,17 +111,7 @@ namespace EmployerService.Controllers
                     logger.LogWarning("User ID not found in token.");
                     return BadRequest(new { error = "Something went wrong" });
                 }
-                var vacancy = new Vacancy
-                {
-                    City = request.City,
-                    Description = request.Description,
-                    EmployerId = int.Parse(userId),
-                    ExperienceId = request.Experience_id,
-                    Job_name = request.Job_name,
-                    StatusId = request.Status_id
-                };
-                await DB.Vacancies.AddAsync(vacancy);
-                await DB.SaveChangesAsync();
+                await vacancyService.AddVacancy(request,int.Parse(userId));
                 logger.LogInformation($"New vacancy added successfully by employer ID {userId}.");
                 return Ok();
             }
@@ -206,14 +135,7 @@ namespace EmployerService.Controllers
                     logger.LogWarning("User ID not found in token.");
                     return BadRequest(new { error = "Something went wrong" });
                 }
-                var vacancy = await DB.Vacancies.FirstOrDefaultAsync(v => v.Id == vacancy_id && v.EmployerId == int.Parse(userId));
-                if (vacancy == null)
-                {
-                    logger.LogWarning($"Vacancy with ID {vacancy_id} not found for deletion.");
-                    return NotFound(new { error = "Vacancy not found" });
-                }
-                DB.Vacancies.Remove(vacancy);
-                await DB.SaveChangesAsync();
+                await vacancyService.DeleteVacancy(vacancy_id,int.Parse(userId));
                 logger.LogInformation($"Vacancy with ID {vacancy_id} deleted successfully.");
                 return Ok();
             }
@@ -237,20 +159,7 @@ namespace EmployerService.Controllers
                     logger.LogWarning("User ID not found in token.");
                     return BadRequest(new { error = "Something went wrong" });
                 }
-                var vacancy = await DB.Vacancies.FirstOrDefaultAsync(v => v.Id == request.Id && v.EmployerId == int.Parse(userId));
-                if (vacancy == null)
-                {
-                    logger.LogWarning($"Vacancy with ID {request.Id} not found for update.");
-                    return NotFound(new { error = "Vacancy not found" });
-                }
-
-                if (!string.IsNullOrEmpty(request.Job_name)) vacancy.Job_name = request.Job_name;
-                if (!string.IsNullOrEmpty(request.Description)) vacancy.Description = request.Description;
-                if (!string.IsNullOrEmpty(request.City)) vacancy.City = request.City;
-                if (request.Status_id > 0) vacancy.StatusId = request.Status_id;
-                if (request.Experience_id > 0) vacancy.ExperienceId = request.Experience_id;
-
-                await DB.SaveChangesAsync();
+                await vacancyService.UpdateVacancy(request,int.Parse(userId));
                 logger.LogInformation($"Vacancy with ID {request.Id} updated successfully.");
                 return Ok();
             }

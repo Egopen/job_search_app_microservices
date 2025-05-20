@@ -1,4 +1,5 @@
 ﻿using EmployerService.DB.DBContext;
+using EmployerService.Domain.Services.ExperienceService;
 using EmployerService.Features.Logger;
 using EmployerService.JSON.ResponseJSON;
 using Microsoft.AspNetCore.Http;
@@ -10,13 +11,13 @@ namespace EmployerService.Controllers
     [ApiController]
     public class ExperienceController : ControllerBase
     {
-        private readonly Context DB;
-        private readonly LoggerService logger;
+        private readonly ILoggerService logger;
+        private readonly IExperienceService experienceService;
 
-        public ExperienceController(Context context, LoggerService logger)
+        public ExperienceController( ILoggerService logger,IExperienceService experienceService)
         {
-            DB = context;
             this.logger = logger;
+            this.experienceService = experienceService;
         }
 
         [HttpGet]
@@ -26,14 +27,7 @@ namespace EmployerService.Controllers
 
             try
             {
-                var experiences = new List<ExperienceResponse>();
-
-                foreach (var exp in DB.Experiences)
-                {
-                    experiences.Add(new ExperienceResponse { Id = exp.Id, Desc = exp.Desc });
-                }
-
-                logger.LogInformation($"Successfully fetched {experiences.Count} experiences.");
+                var experiences = experienceService.GetAllExperience();
                 return Ok(experiences);
             }
             catch (Exception ex)

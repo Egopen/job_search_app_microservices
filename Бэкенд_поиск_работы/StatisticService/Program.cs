@@ -37,7 +37,6 @@ namespace StatisticService
                 });
 
 
-                // Добавление схемы авторизации (JWT)
                 c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -61,7 +60,6 @@ namespace StatisticService
                     }
                 });
 
-                // Дополнительные настройки (например, сортировка эндпоинтов)
                 c.OrderActionsBy((apiDesc) => $"{apiDesc.HttpMethod} {apiDesc.RelativePath}");
             });
             builder.WebHost.ConfigureKestrel(options =>
@@ -70,7 +68,6 @@ namespace StatisticService
             });
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

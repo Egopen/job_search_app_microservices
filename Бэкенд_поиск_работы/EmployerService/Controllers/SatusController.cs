@@ -1,4 +1,5 @@
 ﻿using EmployerService.DB.DBContext;
+using EmployerService.Domain.Services.StatusService;
 using EmployerService.Features.Logger;
 using EmployerService.JSON.ResponseJSON;
 using Microsoft.AspNetCore.Http;
@@ -10,13 +11,13 @@ namespace EmployerService.Controllers
     [ApiController]
     public class SatusController : ControllerBase
     {
-        private readonly Context DB;
-        private readonly LoggerService logger;
+        private readonly ILoggerService logger;
+        private readonly IStatusService statusService;
 
-        public SatusController(Context context, LoggerService logger)
+        public SatusController( ILoggerService logger,IStatusService statusService)
         {
-            DB = context;
             this.logger = logger;
+            this.statusService = statusService;
         }
 
         [HttpGet]
@@ -25,18 +26,11 @@ namespace EmployerService.Controllers
             logger.LogInformation("Request received to fetch all statuses.");
             try
             {
-                var statuses = new List<StatusResponse>();
-                foreach (var stat in DB.Statuses)
-                {
-                    statuses.Add(new StatusResponse { Id = stat.Id, Desc = stat.Desc, Is_active = stat.IsActive });
-                }
-
-                logger.LogInformation($"Successfully fetched {statuses.Count} statuses from the database.");
+                var statuses = await statusService.GetAllStatusesAsync();
                 return Ok(statuses);
             }
             catch (Exception ex)
             {
-                logger.LogError($"Error occurred while fetching statuses: {ex.Message}");
                 return BadRequest(new { error = "Something went wrong" });
             }
         }

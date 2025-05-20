@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|solutionrelative:authservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\employerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|solutionrelative:employerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\authservice\\application\\services\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|solutionrelative:authservice\\application\\services\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\employerservice\\controllers\\responsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|solutionrelative:employerservice\\controllers\\responsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9421037-0B2C-4A81-AE1C-1F46B3E169F3}|APIGateway\\APIGateway.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9421037-0B2C-4A81-AE1C-1F46B3E169F3}|APIGateway\\APIGateway.csproj|solutionrelative:apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\employerservice\\domain\\services\\responseservice\\iresponseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|solutionrelative:employerservice\\domain\\services\\responseservice\\iresponseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\authservice\\ui\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|solutionrelative:authservice\\ui\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\authservice\\application\\services\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|solutionrelative:authservice\\application\\services\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\authservice\\application\\dto\\tokenpairdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|solutionrelative:authservice\\application\\dto\\tokenpairdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\authservice\\ui\\dto\\requestjson\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|solutionrelative:authservice\\ui\\dto\\requestjson\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\authservice\\infrastructure\\services\\dbproxy\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A9B8962-AC11-4A51-BD8B-FAE082A79074}|AuthService\\AuthService.csproj|solutionrelative:authservice\\infrastructure\\services\\dbproxy\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\employerservice\\domain\\services\\responseservice\\responseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|solutionrelative:employerservice\\domain\\services\\responseservice\\responseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,102 +32,53 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Program.cs",
-              "RelativeDocumentMoniker": "AuthService\\Program.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Program.cs",
-              "RelativeToolTip": "AuthService\\Program.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCMAAABWAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Program.cs",
+              "RelativeDocumentMoniker": "EmployerService\\Program.cs",
+              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Program.cs",
+              "RelativeToolTip": "EmployerService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T08:19:23.802Z",
+              "WhenOpened": "2025-05-20T11:45:33.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResponseService.cs",
+              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Domain\\Services\\ResponseService\\ResponseService.cs",
+              "RelativeDocumentMoniker": "EmployerService\\Domain\\Services\\ResponseService\\ResponseService.cs",
+              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Domain\\Services\\ResponseService\\ResponseService.cs",
+              "RelativeToolTip": "EmployerService\\Domain\\Services\\ResponseService\\ResponseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T11:30:56.509Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\APIGateway\\Program.cs",
-              "RelativeDocumentMoniker": "APIGateway\\Program.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\APIGateway\\Program.cs",
-              "RelativeToolTip": "APIGateway\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IResponseService.cs",
+              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Domain\\Services\\ResponseService\\IResponseService.cs",
+              "RelativeDocumentMoniker": "EmployerService\\Domain\\Services\\ResponseService\\IResponseService.cs",
+              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Domain\\Services\\ResponseService\\IResponseService.cs",
+              "RelativeToolTip": "EmployerService\\Domain\\Services\\ResponseService\\IResponseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T08:13:48.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Application\\Services\\Auth\\IAuthService.cs",
-              "RelativeDocumentMoniker": "AuthService\\Application\\Services\\Auth\\IAuthService.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Application\\Services\\Auth\\IAuthService.cs",
-              "RelativeToolTip": "AuthService\\Application\\Services\\Auth\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T08:29:17.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TokenPairDTO.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Application\\DTO\\TokenPairDTO.cs",
-              "RelativeDocumentMoniker": "AuthService\\Application\\DTO\\TokenPairDTO.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Application\\DTO\\TokenPairDTO.cs",
-              "RelativeToolTip": "AuthService\\Application\\DTO\\TokenPairDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T08:28:33.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\UI\\DTO\\RequestJSON\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "AuthService\\UI\\DTO\\RequestJSON\\RegisterRequest.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\UI\\DTO\\RequestJSON\\RegisterRequest.cs",
-              "RelativeToolTip": "AuthService\\UI\\DTO\\RequestJSON\\RegisterRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T08:26:29.408Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\UI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "AuthService\\UI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\UI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "AuthService\\UI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T08:17:52.209Z",
+              "WhenOpened": "2025-05-20T11:28:26.224Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Application\\Services\\Auth\\AuthService.cs",
-              "RelativeDocumentMoniker": "AuthService\\Application\\Services\\Auth\\AuthService.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Application\\Services\\Auth\\AuthService.cs",
-              "RelativeToolTip": "AuthService\\Application\\Services\\Auth\\AuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Title": "ResponseController.cs",
+              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Controllers\\ResponseController.cs",
+              "RelativeDocumentMoniker": "EmployerService\\Controllers\\ResponseController.cs",
+              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Controllers\\ResponseController.cs",
+              "RelativeToolTip": "EmployerService\\Controllers\\ResponseController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwD8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T11:07:50.056Z",
+              "WhenOpened": "2025-05-20T11:26:51.001Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Infrastructure\\Services\\DBProxy\\UserRepository.cs",
-              "RelativeDocumentMoniker": "AuthService\\Infrastructure\\Services\\DBProxy\\UserRepository.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\AuthService\\Infrastructure\\Services\\DBProxy\\UserRepository.cs",
-              "RelativeToolTip": "AuthService\\Infrastructure\\Services\\DBProxy\\UserRepository.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwC4AAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T16:13:21.302Z"
             }
           ]
         }
