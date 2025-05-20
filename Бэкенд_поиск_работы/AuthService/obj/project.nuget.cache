@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TnJhEpE7bm8=",
+  "dgSpecHash": "hDMoWc/+IdE=",
   "success": true,
-  "projectFilePath": "C:\\курсовая\\Бэкенд_поиск_работы\\AuthService\\AuthService.csproj",
+  "projectFilePath": "C:\\FullProject\\job_search_app_microservices\\Бэкенд_поиск_работы\\AuthService\\AuthService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Егор\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Егор\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.10\\microsoft.aspnetcore.authentication.jwtbearer.8.0.10.nupkg.sha512",

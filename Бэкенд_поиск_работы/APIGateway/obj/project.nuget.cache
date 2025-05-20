@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NiqEkSI959M=",
+  "dgSpecHash": "7Dt55fU1qgk=",
   "success": true,
-  "projectFilePath": "C:\\курсовая\\Бэкенд_поиск_работы\\APIGateway\\APIGateway.csproj",
+  "projectFilePath": "C:\\FullProject\\job_search_app_microservices\\Бэкенд_поиск_работы\\APIGateway\\APIGateway.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Егор\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\Егор\\.nuget\\packages\\ipaddressrange\\6.1.0\\ipaddressrange.6.1.0.nupkg.sha512",

@@ -1,7 +1,7 @@
-﻿using AuthService.DB.Models;
+﻿using AuthService.Infrastructure.DB.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AuthService.DB.DBContext
+namespace AuthService.Infrastructure.DB.DBContext
 {
     public class Context : DbContext
     {

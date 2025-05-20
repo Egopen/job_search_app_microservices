@@ -1,7 +1,10 @@
-
-using AuthService.DB.DBContext;
-using AuthService.Features;
-using AuthService.Features.Logger;
+using AuthService.Application.Services.Auth;
+using AuthService.Infrastructure.DB.DBContext;
+using AuthService.Infrastructure.Services.DBProxy;
+using AuthService.Infrastructure.Services.Hasher;
+using AuthService.Infrastructure.Services.Logger;
+using AuthService.Infrastructure.Services.Tokens;
+using AuthService.Infrastructure.Settings;
 using AuthService.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +28,11 @@ namespace AuthService
             /// Authorization
             ///
             builder.Services.AddDbContext<Context>(db => db.UseNpgsql(Environment.GetEnvironmentVariable("CONNECTION_STRING")));
-            builder.Services.AddSingleton<LoggerService>();
+            builder.Services.AddScoped<ILoggerService,LoggerService>();
+            builder.Services.AddScoped<IHashService, HashService>();
+            builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<IUserRespository, UserRepository>();
+            builder.Services.AddScoped<IAuthService, Application.Services.Auth.AuthService>();
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer("Access", options =>
                 {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GfOsrKF/Qj4=",
+  "dgSpecHash": "X//BCt4AtRU=",
   "success": true,
-  "projectFilePath": "C:\\курсовая\\Бэкенд_поиск_работы\\StatisticService\\StatisticService.csproj",
+  "projectFilePath": "C:\\FullProject\\job_search_app_microservices\\Бэкенд_поиск_работы\\StatisticService\\StatisticService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Егор\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Егор\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

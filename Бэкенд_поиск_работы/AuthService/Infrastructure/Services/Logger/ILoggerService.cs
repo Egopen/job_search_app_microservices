@@ -1,4 +1,4 @@
-﻿namespace AuthService.Features.Logger
+﻿namespace AuthService.Infrastructure.Services.Logger
 {
     public interface ILoggerService
     {

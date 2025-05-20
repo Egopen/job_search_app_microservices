@@ -1,6 +1,6 @@
 ﻿using Serilog;
 
-namespace AuthService.Features.Logger
+namespace AuthService.Infrastructure.Services.Logger
 {
     public class LoggerService : ILoggerService
     {
@@ -8,7 +8,7 @@ namespace AuthService.Features.Logger
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
-                .WriteTo.Console() 
+                .WriteTo.Console()
                 .CreateLogger();
         }
 

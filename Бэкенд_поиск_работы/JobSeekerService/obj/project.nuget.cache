@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5J1drsx0Y0A=",
+  "dgSpecHash": "ZusuIQdp0fc=",
   "success": true,
-  "projectFilePath": "C:\\курсовая\\Бэкенд_поиск_работы\\JobSeekerService\\JobSeekerService.csproj",
+  "projectFilePath": "C:\\FullProject\\job_search_app_microservices\\Бэкенд_поиск_работы\\JobSeekerService\\JobSeekerService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Егор\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Егор\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",

@@ -3,11 +3,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace AuthService.Features
+namespace AuthService.Infrastructure.Services.Tokens
 {
-    public class TokenManager
+    public class TokenService:ITokenService
     {
-        public static string CreateAccessToken(string userId,string role)
+        public string CreateAccessToken(string userId, string role)
         {
             var claims = new List<Claim> { new("UserId", userId) };
             claims.Add(new Claim(ClaimTypes.Role, role));
@@ -20,7 +20,7 @@ namespace AuthService.Features
             var AccesToken = new JwtSecurityTokenHandler().WriteToken(jwt);
             return AccesToken;
         }
-        public static string CreateRefreshToken()
+        public string CreateRefreshToken()
         {
             var jwt = new JwtSecurityToken(issuer: AuthOptions.ISSUER,// создание токенов для возвращения метода
             audience: AuthOptions.AUDIENCE,

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace AuthService.DB.Models
+namespace AuthService.Infrastructure.DB.Models
 {
     public class User
     {

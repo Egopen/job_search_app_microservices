@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JobSeekerService.JSON.RequestJSON
+namespace AuthService.UI.DTO.RequestJSON
 {
     public class RegisterRequest
     {

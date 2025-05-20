@@ -2,22 +2,20 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace AuthService.Features
+namespace AuthService.Infrastructure.Services.Hasher
 {
-    public class HashManager
+    public class HashService : IHashService
     {
-        public static string CreateHash(string input)
+        public string CreateHash(string input)
         {
-            var byteInp = ASCIIEncoding.ASCII.GetBytes(input);
+            var byteInp = Encoding.ASCII.GetBytes(input);
             var hashInp = MD5.HashData(byteInp);
-            int i;
             StringBuilder sOutput = new StringBuilder(hashInp.Length);
-            for (i = 0; i < hashInp.Length; i++)
+            for (int i = 0; i < hashInp.Length; i++)
             {
                 sOutput.Append(hashInp[i].ToString("X2"));
             }
             return sOutput.ToString();
-
         }
     }
 }
