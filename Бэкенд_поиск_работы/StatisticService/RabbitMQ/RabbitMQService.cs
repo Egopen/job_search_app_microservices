@@ -9,10 +9,8 @@ namespace RabbitMQInitializer
         private static readonly LoggerService _logger = new LoggerService();
         private IChannel? _channel;
 
-        // Метод инициализации канала
         private async Task Initialize()
         {
-            // Настройки подключения к RabbitMQ
             string hostName = "rabbitmq";
             string userName = "user";
             string password = "password";
@@ -78,23 +76,19 @@ namespace RabbitMQInitializer
             }
         }
 
-        // Метод для отправки сообщения
         public async Task SendMessageAsync(string queueName, byte[] body)
         {
             try
             {
-                // Проверяем, если канал не инициализирован, то инициализируем его
                 if (_channel == null)
                 {
-                    await Initialize(); // инициализируем канал
+                    await Initialize(); 
                     if (_channel == null)
                     {
                         _logger.LogError("RabbitMQ channel is still not initialized.");
                         return;
                     }
                 }
-
-                // Отправляем сообщение
                 await _channel.BasicPublishAsync(exchange: string.Empty, routingKey: queueName, body: body);
                 _logger.LogInformation($"Message sent to queue '{queueName}' successfully.");
             }
@@ -111,7 +105,6 @@ namespace RabbitMQInitializer
 
             try
             {
-                // Проверяем, если канал не инициализирован, то инициализируем его
                 if (_channel == null)
                 {
                     await Initialize();
@@ -124,7 +117,6 @@ namespace RabbitMQInitializer
 
                 _logger.LogInformation($"Start receiving messages from queue '{queueName}'...");
 
-                // Создаем цикл для получения всех сообщений из очереди
                 while (true)
                 {
                     try
@@ -133,25 +125,22 @@ namespace RabbitMQInitializer
 
                         if (result == null)
                         {
-                            // Если сообщений больше нет, выходим из цикла
                             _logger.LogInformation($"No more messages in queue '{queueName}'.");
                             break;
                         }
 
-                        // Получаем сообщение из тела
                         var body = result.Body.ToArray();
                         var message = System.Text.Encoding.UTF8.GetString(body);
                         messages.Add(message);
 
                         _logger.LogInformation($"Message received: {message}");
 
-                        // Подтверждаем успешное получение сообщения
                         await _channel.BasicAckAsync(result.DeliveryTag, multiple: false);
                     }
                     catch (Exception ex)
                     {
                         _logger.LogError($"Error while retrieving messages from queue '{queueName}'.", ex);
-                        break; // Завершаем цикл при критической ошибке
+                        break;
                     }
                 }
             }

@@ -2,14 +2,13 @@
 using JobSeekerService.Features.Logger;
 using JobSeekerService.JSON.RabbitMQClasses;
 using Microsoft.EntityFrameworkCore;
-using RabbitMQInitializer;
 using System.Text.Json;
 
-namespace JobSeekerService.RabbitMQ
+namespace JobSeekerService.Domain.RabbitMQ
 {
     public class RabbitMQSendResumeStatisticService : BackgroundService
     {
-        private readonly IServiceProvider _serviceProvider; // Для создания scope
+        private readonly IServiceProvider _serviceProvider; 
         private readonly RabbitMQService _rabbitMQService;
         private readonly ILoggerService _logger;
 
@@ -35,19 +34,13 @@ namespace JobSeekerService.RabbitMQ
                     using (var scope = _serviceProvider.CreateScope())
                     {
                         var dbContext = scope.ServiceProvider.GetRequiredService<Context>();
-
-                        // Сбор данных
                         var statistics = await GetResumeStatistics(dbContext);
-
-                        // Преобразование в JSON
                         var jsonMessage = JsonSerializer.Serialize(statistics);
-
-                        // Отправка в RabbitMQ
                         var messageBody = System.Text.Encoding.UTF8.GetBytes(jsonMessage);
                         await _rabbitMQService.SendMessageAsync(queueName, messageBody);
                     }
 
-                    await Task.Delay(30000, stoppingToken); // Пауза перед следующей итерацией
+                    await Task.Delay(30000, stoppingToken); 
                 }
             }
             catch (Exception ex)
@@ -61,7 +54,7 @@ namespace JobSeekerService.RabbitMQ
             var totalResumes = await dbContext.Resumes.CountAsync();
             var activeResumes = await dbContext.Resumes.CountAsync(r => r.Status.Is_active);
             var inactiveResumes = totalResumes - activeResumes;
-            var recordTime= DateTime.UtcNow;
+            var recordTime = DateTime.UtcNow;
 
             return new ResumeStatisticJSON
             {

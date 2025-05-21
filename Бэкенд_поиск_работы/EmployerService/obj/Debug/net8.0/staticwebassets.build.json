@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "BILCVr0tw5tKd/+NTs2fRpk8po4PdrFwXrWYGnWRhqo=",
+  "Hash": "+jwlFGsPQaGn+mNboCsvCFKBN0kiNSt75torKHOlhYA=",
   "Source": "EmployerService",
   "BasePath": "_content/EmployerService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

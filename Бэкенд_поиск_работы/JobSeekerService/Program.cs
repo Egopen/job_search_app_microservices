@@ -1,12 +1,14 @@
 using JobSeekerService.DB.DBContext;
+using JobSeekerService.Domain.RabbitMQ;
+using JobSeekerService.Domain.ResponseService;
+using JobSeekerService.Domain.ResumeService;
+using JobSeekerService.Domain.StatusService;
 using JobSeekerService.Features;
 using JobSeekerService.Features.Logger;
 using JobSeekerService.Options;
-using JobSeekerService.RabbitMQ;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using RabbitMQInitializer;
 
 namespace JobSeekerService
 {
@@ -23,9 +25,12 @@ namespace JobSeekerService
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<Context>(db => db.UseNpgsql(Environment.GetEnvironmentVariable("CONNECTION_STRING")));
-            builder.Services.AddSingleton<LoggerService>();
+            builder.Services.AddScoped<ILoggerService,LoggerService>();
             builder.Services.AddSingleton<RabbitMQService>();
             builder.Services.AddHostedService<RabbitMQSendResumeStatisticService>();
+            builder.Services.AddScoped<IResponseService, ResponseService>();
+            builder.Services.AddScoped<IResumeService, ResumeService>();
+            builder.Services.AddScoped<IStatusService, StatusService>();
             ///
             /// Authorization
             ///
@@ -51,7 +56,6 @@ namespace JobSeekerService
             /// Authorization
             ///
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
@@ -63,7 +67,6 @@ namespace JobSeekerService
                 });
 
 
-                // Добавление схемы авторизации (JWT)
                 c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -86,7 +89,6 @@ namespace JobSeekerService
                         Array.Empty<string>()
                     }
                 });
-                // Дополнительные настройки (например, сортировка эндпоинтов)
                 c.OrderActionsBy((apiDesc) => $"{apiDesc.HttpMethod} {apiDesc.RelativePath}");
             });
             builder.WebHost.ConfigureKestrel(options =>
@@ -95,7 +97,6 @@ namespace JobSeekerService
             });
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

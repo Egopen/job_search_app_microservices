@@ -35,11 +35,9 @@ namespace StatisticService.RabbitMQ
                     {
                         var dbContext = scope.ServiceProvider.GetRequiredService<Context>();
 
-                        // Получить сообщения из очередей
                         var employerMessages = await _rabbitMQService.ReceiveAllMessagesAsync(employerQueue);
                         var seekerMessages = await _rabbitMQService.ReceiveAllMessagesAsync(seekerQueue);
 
-                        // Обработать сообщения
                         foreach (var message in employerMessages)
                         {
                             await ProcessVacancyStatisticMessage(dbContext, message);

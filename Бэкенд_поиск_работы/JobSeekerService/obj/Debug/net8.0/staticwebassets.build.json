@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "zJBUWc3eidA04glbk4O5zl32dUM0G+MNcfdCkwKI0Ow=",
+  "Hash": "WsTNb0mdCxRAhmhYf9/FIJJsH6cWlQvCJv+OGPJyUwA=",
   "Source": "JobSeekerService",
   "BasePath": "_content/JobSeekerService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -2,17 +2,15 @@
 using RabbitMQ.Client;
 using RabbitMQ.Client.Exceptions;
 
-namespace RabbitMQInitializer
+namespace JobSeekerService.Domain.RabbitMQ
 {
     public class RabbitMQService
     {
         private static readonly LoggerService _logger = new LoggerService();
         private IChannel? _channel;
 
-        // Метод инициализации канала
         private async Task Initialize()
         {
-            // Настройки подключения к RabbitMQ
             string hostName = "rabbitmq";
             string userName = "user";
             string password = "password";
@@ -34,7 +32,6 @@ namespace RabbitMQInitializer
                 _channel = await connection.CreateChannelAsync();
                 _logger.LogInformation("Channel created successfully.");
 
-                // Список очередей для создания
                 var queues = new[] { "seeker_response_queue", "employer_statistic_queue", "seeker_statistic_queue" };
 
                 foreach (var queue in queues)
@@ -78,15 +75,13 @@ namespace RabbitMQInitializer
             }
         }
 
-        // Метод для отправки сообщения
         public async Task SendMessageAsync(string queueName, byte[] body)
         {
             try
             {
-                // Проверяем, если канал не инициализирован, то инициализируем его
                 if (_channel == null)
                 {
-                    await Initialize(); // инициализируем канал
+                    await Initialize();
                     if (_channel == null)
                     {
                         _logger.LogError("RabbitMQ channel is still not initialized.");
@@ -94,7 +89,6 @@ namespace RabbitMQInitializer
                     }
                 }
 
-                // Отправляем сообщение
                 await _channel.BasicPublishAsync(exchange: string.Empty, routingKey: queueName, body: body);
                 _logger.LogInformation($"Message sent to queue '{queueName}' successfully.");
             }
@@ -104,14 +98,12 @@ namespace RabbitMQInitializer
             }
         }
 
-        // Метод для получения сообщения
         public async Task<List<string>> ReceiveAllMessagesAsync(string queueName)
         {
             var messages = new List<string>();
 
             try
             {
-                // Проверяем, если канал не инициализирован, то инициализируем его
                 if (_channel == null)
                 {
                     await Initialize();
@@ -124,35 +116,30 @@ namespace RabbitMQInitializer
 
                 _logger.LogInformation($"Start receiving messages from queue '{queueName}'...");
 
-                // Создаем цикл для получения всех сообщений из очереди
                 while (true)
                 {
                     try
                     {
-                        // Попытка получить сообщение
                         var result = await _channel.BasicGetAsync(queue: queueName, autoAck: false);
 
                         if (result == null)
                         {
-                            // Если сообщений больше нет, выходим из цикла
                             _logger.LogInformation($"No more messages in queue '{queueName}'.");
                             break;
                         }
 
-                        // Получаем сообщение из тела
                         var body = result.Body.ToArray();
                         var message = System.Text.Encoding.UTF8.GetString(body);
                         messages.Add(message);
 
                         _logger.LogInformation($"Message received: {message}");
 
-                        // Подтверждаем успешное получение сообщения
                         await _channel.BasicAckAsync(result.DeliveryTag, multiple: false);
                     }
                     catch (Exception ex)
                     {
                         _logger.LogError($"Error while retrieving messages from queue '{queueName}'.", ex);
-                        break; // Завершаем цикл при критической ошибке
+                        break;
                     }
                 }
             }

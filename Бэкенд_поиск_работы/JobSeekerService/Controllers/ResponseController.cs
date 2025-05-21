@@ -1,4 +1,6 @@
 ﻿using JobSeekerService.DB.DBContext;
+using JobSeekerService.Domain.RabbitMQ;
+using JobSeekerService.Domain.ResponseService;
 using JobSeekerService.Features.Logger;
 using JobSeekerService.JSON.RequestJSON;
 using JobSeekerService.JSON.ResponseJSON;
@@ -6,7 +8,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RabbitMQInitializer;
 using System.Reflection.PortableExecutable;
 using System.Security.Claims;
 using System.Text.Json;
@@ -17,14 +18,13 @@ namespace JobSeekerService.Controllers
     [ApiController]
     public class ResponseController : ControllerBase
     {
-        private Context DB;
-        private LoggerService logger;
-        private RabbitMQService rabbitMQService;
-        public ResponseController(Context context, LoggerService logger,RabbitMQService rabbitMQService )
+        private ILoggerService logger;
+        private IResponseService responseService;
+
+        public ResponseController(IResponseService responseService, ILoggerService logger)
         {
-            DB = context;
+            this.responseService = responseService;
             this.logger = logger;
-            this.rabbitMQService = rabbitMQService;
         }
         [Authorize(AuthenticationSchemes = "Access", Roles = "User")]
         [HttpPost]
@@ -33,16 +33,12 @@ namespace JobSeekerService.Controllers
             try
             {
                 var userId = HttpContext.User.FindFirstValue("UserId");
-                if (userId == null || await DB.Resumes.FirstOrDefaultAsync((r)=>r.Id==addResponseJSON.Resume_id && r.Job_seekerId==int.Parse(userId))==null)
+                if (userId == null)
                 {
                     logger.LogWarning("Something went wrong");
                     return BadRequest(new { error = "Something went wrong" });
                 }
-                await DB.Responses.AddAsync(new DB.Models.Response { ResumeId = addResponseJSON.Resume_id, Vacancy_id = addResponseJSON.Vacancy_id });
-                await DB.SaveChangesAsync();
-                var mes = JsonSerializer.Serialize(addResponseJSON);
-                var body = System.Text.Encoding.UTF8.GetBytes(mes);
-                await rabbitMQService.SendMessageAsync("seeker_response_queue", body);
+                await responseService.AddResponse(addResponseJSON, int.Parse(userId));
                 return Ok();
             }
             catch (Exception ex) { 
@@ -55,15 +51,13 @@ namespace JobSeekerService.Controllers
         {
             try
             {
-                var res = await DB.Responses.FirstOrDefaultAsync((r) => r.Id==id);
                 var userId = HttpContext.User.FindFirstValue("UserId");
-                if (userId == null || res == null || await DB.Resumes.FirstOrDefaultAsync((r) => r.Id == res.ResumeId && r.Job_seekerId == int.Parse(userId)) == null)
+                if (userId == null)
                 {
                     logger.LogWarning("Something went wrong");
                     return BadRequest(new { error = "Something went wrong" });
                 }
-                DB.Responses.Remove(res);
-                await DB.SaveChangesAsync();
+                await responseService.DeleteResponseById(id,int.Parse(userId));
                 return Ok();
             }
             catch (Exception ex)
@@ -78,19 +72,12 @@ namespace JobSeekerService.Controllers
             try
             {
                 var userId = HttpContext.User.FindFirstValue("UserId");
-                if (userId == null || await DB.Resumes.FirstOrDefaultAsync((r) => r.Id == id && r.Job_seekerId == int.Parse(userId)) == null)
+                if (userId == null)
                 {
                     logger.LogWarning("Something went wrong");
                     return BadRequest(new { error = "Something went wrong" });
                 }
-                var res = await (from r in DB.Responses
-                          where r.ResumeId == id
-                          select new ResponseResumeDataResponse
-                          {
-                              Id = r.Id,
-                              Resume_id=r.ResumeId,
-                              Vacancy_id=r.Vacancy_id
-                          }).ToListAsync();
+                var res = await responseService.GetAllResponsesByResumeId(id,int.Parse(userId));
                 return Ok(res);
             }
             catch (Exception ex)

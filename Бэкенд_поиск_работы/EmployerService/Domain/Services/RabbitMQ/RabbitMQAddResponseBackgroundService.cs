@@ -30,8 +30,6 @@ namespace EmployerService.Domain.Services.RabbitMQ
                 try
                 {
                     _logger.LogInformation($"Checking for messages in queue '{queueName}'.");
-
-                    // Получаем все сообщения из очереди
                     var messages = await _rabbitMQService.ReceiveAllMessagesAsync(queueName);
 
                     if (messages.Count == 0)

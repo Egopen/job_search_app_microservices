@@ -1,4 +1,5 @@
 ﻿using JobSeekerService.DB.DBContext;
+using JobSeekerService.Domain.StatusService;
 using JobSeekerService.Features.Logger;
 using JobSeekerService.JSON.ResponseJSON;
 using Microsoft.AspNetCore.Http;
@@ -11,12 +12,12 @@ namespace JobSeekerService.Controllers
     [ApiController]
     public class StatusController : ControllerBase
     {
-        private readonly Context DB;
-        private readonly LoggerService logger;
+        private readonly IStatusService statusService;
+        private readonly ILoggerService logger;
 
-        public StatusController(Context context, LoggerService logger)
+        public StatusController(IStatusService statusService, ILoggerService logger)
         {
-            DB = context;
+            this.statusService=statusService;
             this.logger = logger;
         }
 
@@ -27,15 +28,7 @@ namespace JobSeekerService.Controllers
 
             try
             {
-                var resp = new List<StatusResponse>();
-                var statuses = await DB.Statuses.ToListAsync();  // Асинхронное получение данных из базы
-
-                foreach (var status in statuses)
-                {
-                    resp.Add(new StatusResponse { Id = status.Id, Desc = status.Desc });
-                }
-
-                logger.LogInformation($"Successfully retrieved {resp.Count} statuses.");
+                var resp = statusService.GetAllStatuses();
                 return Ok(resp);
             }
             catch (Exception ex)
