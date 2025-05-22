@@ -1,5 +1,5 @@
-﻿using EmployerService.DB.DBContext;
-using EmployerService.Features.Logger;
+﻿using EmployerService.Infrastructure.DB.DBContext;
+using EmployerService.Infrastructure.Features.Logger;
 using EmployerService.JSON.ResponseJSON;
 using Microsoft.EntityFrameworkCore;
 

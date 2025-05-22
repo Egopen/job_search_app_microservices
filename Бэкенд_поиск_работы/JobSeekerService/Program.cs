@@ -1,11 +1,11 @@
-using JobSeekerService.DB.DBContext;
 using JobSeekerService.Domain.RabbitMQ;
 using JobSeekerService.Domain.ResponseService;
 using JobSeekerService.Domain.ResumeService;
 using JobSeekerService.Domain.StatusService;
-using JobSeekerService.Features;
-using JobSeekerService.Features.Logger;
-using JobSeekerService.Options;
+using JobSeekerService.Infrastructure.DB.DBContext;
+using JobSeekerService.Infrastructure.Features;
+using JobSeekerService.Infrastructure.Features.Logger;
+using JobSeekerService.Infrastructure.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

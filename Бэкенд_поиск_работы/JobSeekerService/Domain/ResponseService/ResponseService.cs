@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using JobSeekerService.DB.DBContext;
 using JobSeekerService.Domain.RabbitMQ;
-using JobSeekerService.Features.Logger;
+using JobSeekerService.Infrastructure.DB.DBContext;
+using JobSeekerService.Infrastructure.Features.Logger;
 using JobSeekerService.JSON.RequestJSON;
 using JobSeekerService.JSON.ResponseJSON;
 using Microsoft.EntityFrameworkCore;

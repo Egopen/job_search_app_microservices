@@ -1,4 +1,4 @@
-﻿using EmployerService.Features.Logger;
+﻿using EmployerService.Infrastructure.Features.Logger;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Exceptions;
 

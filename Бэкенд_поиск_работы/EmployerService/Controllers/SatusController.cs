@@ -1,6 +1,6 @@
 ﻿using EmployerService.DB.DBContext;
 using EmployerService.Domain.Services.StatusService;
-using EmployerService.Features.Logger;
+using EmployerService.Infrastructure.Features.Logger;
 using EmployerService.JSON.ResponseJSON;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

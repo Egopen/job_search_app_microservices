@@ -1,7 +1,7 @@
 ﻿using JobSeekerService.DB.DBContext;
 using JobSeekerService.Domain.RabbitMQ;
 using JobSeekerService.Domain.ResponseService;
-using JobSeekerService.Features.Logger;
+using JobSeekerService.Infrastructure.Features.Logger;
 using JobSeekerService.JSON.RequestJSON;
 using JobSeekerService.JSON.ResponseJSON;
 using Microsoft.AspNetCore.Authorization;

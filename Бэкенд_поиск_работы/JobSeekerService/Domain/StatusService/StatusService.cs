@@ -1,5 +1,5 @@
-﻿using JobSeekerService.DB.DBContext;
-using JobSeekerService.Features.Logger;
+﻿using JobSeekerService.Features.Logger;
+using JobSeekerService.Infrastructure.DB.DBContext;
 using JobSeekerService.JSON.ResponseJSON;
 using Microsoft.EntityFrameworkCore;
 

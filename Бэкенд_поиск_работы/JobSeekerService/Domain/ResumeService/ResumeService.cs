@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
-using JobSeekerService.DB.DBContext;
 using JobSeekerService.DB.Models;
 using JobSeekerService.Domain.Exceptions;
-using JobSeekerService.Features.Logger;
+using JobSeekerService.Infrastructure.DB.DBContext;
+using JobSeekerService.Infrastructure.Features.Logger;
 using JobSeekerService.JSON.RequestJSON;
 using JobSeekerService.JSON.ResponseJSON;
 using Microsoft.EntityFrameworkCore;

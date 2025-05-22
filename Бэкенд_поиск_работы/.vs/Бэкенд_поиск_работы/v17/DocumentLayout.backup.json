@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\employerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|solutionrelative:employerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1238DFC0-7635-456D-8CBD-93823F85F197}|JobSeekerService\\JobSeekerService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\jobseekerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1238DFC0-7635-456D-8CBD-93823F85F197}|JobSeekerService\\JobSeekerService.csproj|solutionrelative:jobseekerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\statisticservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|solutionrelative:statisticservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\statisticservice\\rabbitmq\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|solutionrelative:statisticservice\\rabbitmq\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\statisticservice\\domain\\rabbitmq\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|solutionrelative:statisticservice\\domain\\rabbitmq\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\statisticservice\\rabbitmq\\rabbitmqconsumestatisticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|solutionrelative:statisticservice\\rabbitmq\\rabbitmqconsumestatisticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\statisticservice\\domain\\rabbitmq\\rabbitmqconsumestatisticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C815AA6E-34E5-4F45-9355-0D10117BDA23}|StatisticService\\StatisticService.csproj|solutionrelative:statisticservice\\domain\\rabbitmq\\rabbitmqconsumestatisticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3EC0A940-3014-4CF6-82A1-19CBA860D94A}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{3EC0A940-3014-4CF6-82A1-19CBA860D94A}|C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\employerservice\\domain\\services\\rabbitmq\\rabbitmqsendstatisticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93145B53-1079-4B9A-A01F-29858A29C329}|EmployerService\\EmployerService.csproj|solutionrelative:employerservice\\domain\\services\\rabbitmq\\rabbitmqsendstatisticservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1238DFC0-7635-456D-8CBD-93823F85F197}|JobSeekerService\\JobSeekerService.csproj|c:\\fullproject\\job_search_app_microservices\\\u0431\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\jobseekerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1238DFC0-7635-456D-8CBD-93823F85F197}|JobSeekerService\\JobSeekerService.csproj|solutionrelative:jobseekerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,49 +48,49 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
+              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Program.cs",
+              "RelativeDocumentMoniker": "EmployerService\\Program.cs",
+              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Program.cs",
+              "RelativeToolTip": "EmployerService\\Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T16:43:50.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
               "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\Program.cs",
               "RelativeDocumentMoniker": "StatisticService\\Program.cs",
               "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\Program.cs",
               "RelativeToolTip": "StatisticService\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:03:18.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-05-21T16:03:14.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "RabbitMQConsumeStatisticService.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\RabbitMQ\\RabbitMQConsumeStatisticService.cs",
-              "RelativeDocumentMoniker": "StatisticService\\RabbitMQ\\RabbitMQConsumeStatisticService.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\RabbitMQ\\RabbitMQConsumeStatisticService.cs",
-              "RelativeToolTip": "StatisticService\\RabbitMQ\\RabbitMQConsumeStatisticService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\Domain\\RabbitMQ\\RabbitMQConsumeStatisticService.cs",
+              "RelativeDocumentMoniker": "StatisticService\\Domain\\RabbitMQ\\RabbitMQConsumeStatisticService.cs",
+              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\Domain\\RabbitMQ\\RabbitMQConsumeStatisticService.cs",
+              "RelativeToolTip": "StatisticService\\Domain\\RabbitMQ\\RabbitMQConsumeStatisticService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:02:25.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "RabbitMQService.cs",
-              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\RabbitMQ\\RabbitMQService.cs",
-              "RelativeDocumentMoniker": "StatisticService\\RabbitMQ\\RabbitMQService.cs",
-              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\RabbitMQ\\RabbitMQService.cs",
-              "RelativeToolTip": "StatisticService\\RabbitMQ\\RabbitMQService.cs",
+              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\Domain\\RabbitMQ\\RabbitMQService.cs",
+              "RelativeDocumentMoniker": "StatisticService\\Domain\\RabbitMQ\\RabbitMQService.cs",
+              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\StatisticService\\Domain\\RabbitMQ\\RabbitMQService.cs",
+              "RelativeToolTip": "StatisticService\\Domain\\RabbitMQ\\RabbitMQService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:02:21.237Z",
@@ -94,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "RabbitMQService.cs",
               "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Domain\\Services\\RabbitMQ\\RabbitMQService.cs",
               "RelativeDocumentMoniker": "EmployerService\\Domain\\Services\\RabbitMQ\\RabbitMQService.cs",
@@ -107,20 +111,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "RabbitMQSendStatisticService.cs",
               "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Domain\\Services\\RabbitMQ\\RabbitMQSendStatisticService.cs",
               "RelativeDocumentMoniker": "EmployerService\\Domain\\Services\\RabbitMQ\\RabbitMQSendStatisticService.cs",
               "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\EmployerService\\Domain\\Services\\RabbitMQ\\RabbitMQSendStatisticService.cs",
               "RelativeToolTip": "EmployerService\\Domain\\Services\\RabbitMQ\\RabbitMQSendStatisticService.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T16:02:08.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\JobSeekerService\\Program.cs",
               "RelativeDocumentMoniker": "JobSeekerService\\Program.cs",
@@ -130,6 +134,18 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T15:32:13.814Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\FullProject\\job_search_app_microservices\\\u0411\u044D\u043A\u0435\u043D\u0434_\u043F\u043E\u0438\u0441\u043A_\u0440\u0430\u0431\u043E\u0442\u044B\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-05-21T16:03:14.49Z"
             }
           ]
         }

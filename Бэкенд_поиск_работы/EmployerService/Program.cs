@@ -1,13 +1,12 @@
-
-using EmployerService.DB.DBContext;
 using EmployerService.Domain.Services.ExperienceService;
 using EmployerService.Domain.Services.RabbitMQ;
 using EmployerService.Domain.Services.ResponseService;
 using EmployerService.Domain.Services.StatusService;
 using EmployerService.Domain.Services.VacancyService;
-using EmployerService.Features;
-using EmployerService.Features.Logger;
-using EmployerService.Options;
+using EmployerService.Infrastructure.DB.DBContext;
+using EmployerService.Infrastructure.Features;
+using EmployerService.Infrastructure.Features.Logger;
+using EmployerService.Infrastructure.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;

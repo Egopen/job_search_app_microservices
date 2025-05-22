@@ -1,5 +1,5 @@
-﻿using JobSeekerService.DB.DBContext;
-using JobSeekerService.Features.Logger;
+﻿using JobSeekerService.Infrastructure.DB.DBContext;
+using JobSeekerService.Infrastructure.Features.Logger;
 using JobSeekerService.JSON.RabbitMQClasses;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;

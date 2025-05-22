@@ -1,6 +1,6 @@
 ﻿using JobSeekerService.DB.DBContext;
 using JobSeekerService.Domain.StatusService;
-using JobSeekerService.Features.Logger;
+using JobSeekerService.Infrastructure.Features.Logger;
 using JobSeekerService.JSON.ResponseJSON;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

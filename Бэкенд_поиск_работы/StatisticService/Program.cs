@@ -1,12 +1,9 @@
 
 using Microsoft.EntityFrameworkCore;
-using RabbitMQInitializer;
-using StatisticService.DB.DBContext;
-using StatisticService.Features;
-using StatisticService.Features.Logger;
-using StatisticService.Options;
-using StatisticService.RabbitMQ;
-
+using StatisticService.Domain.RabbitMQ;
+using StatisticService.Infrastructure.DB.DBContext;
+using StatisticService.Infrastructure.Features;
+using StatisticService.Infrastructure.Features.Logger;
 namespace StatisticService
 {
     public class Program

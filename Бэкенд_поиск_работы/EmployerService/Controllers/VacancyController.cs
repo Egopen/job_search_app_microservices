@@ -1,5 +1,4 @@
 ﻿using EmployerService.DB.DBContext;
-using EmployerService.Features.Logger;
 using EmployerService.JSON.RequestJSON;
 using EmployerService.JSON.ResponseJSON;
 using EmployerService.DB.Models;
@@ -8,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using EmployerService.Domain.Services.VacancyService;
+using EmployerService.Infrastructure.Features.Logger;
 
 namespace EmployerService.Controllers
 {

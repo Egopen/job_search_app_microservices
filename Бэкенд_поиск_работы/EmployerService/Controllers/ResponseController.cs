@@ -1,7 +1,7 @@
 ﻿using EmployerService.DB.DBContext;
 using EmployerService.Domain.Services.RabbitMQ;
 using EmployerService.Domain.Services.ResponseService;
-using EmployerService.Features.Logger;
+using EmployerService.Infrastructure.Features.Logger;
 using EmployerService.JSON.ResponseJSON;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

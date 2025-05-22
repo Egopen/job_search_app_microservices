@@ -1,4 +1,4 @@
-﻿using JobSeekerService.Features.Logger;
+﻿using JobSeekerService.Infrastructure.Features.Logger;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Exceptions;
 

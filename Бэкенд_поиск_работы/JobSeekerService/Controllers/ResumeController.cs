@@ -1,5 +1,4 @@
 ﻿using JobSeekerService.DB.DBContext;
-using JobSeekerService.Features.Logger;
 using JobSeekerService.JSON.RequestJSON;
 using JobSeekerService.JSON.ResponseJSON;
 using JobSeekerService.DB.Models;
@@ -10,6 +9,7 @@ using System.Security.Claims;
 using System.Text.RegularExpressions;
 using JobSeekerService.Domain.ResumeService;
 using JobSeekerService.Domain.Exceptions;
+using JobSeekerService.Infrastructure.Features.Logger;
 
 namespace JobSeekerService.Controllers
 {
